@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <form #loginForm="ngForm" (ngSubmit)="logiin()">
+            <ion-item lines="full">
+                <ion-label class="text-center text-primary">Login</ion-label>
+            </ion-item>
+            <hr>
+            <ion-item>
+
+                <ion-input type="text" class="form-control" required [ngModelOptions]="{standalone: true}" [(ngModel)]="model.Email" placeholder="Email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="password" class="form-control" required [ngModelOptions]="{standalone: true}" [(ngModel)]="model.Password" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-button color="primary" type="button" (click)="logiin()">Login</ion-button>
+            </ion-item>
+        </form>
+    </ion-item>
+</ion-content>

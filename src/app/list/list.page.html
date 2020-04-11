@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>list</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let value of filteredProducts; let i=index ">
+        <ion-avatar slot="start">
+            <img src="https://localhost:44352/images/{{value?.photoPath}}" alt="{{value?.name}}">
+        </ion-avatar>
+        <ion-label>
+            <h2>Name : {{value.name}}</h2>
+            <h3>Price : {{value.price}} $</h3>
+            <h4>Amount : {{cart[i].amount}} </h4>
+            <h3> Totall : {{(value.price * cart[i].amount) | currency}} $</h3>
+            <ion-button color="danger" (click)="cancel(value.id)">Delete</ion-button>
+
+        </ion-label>
+    </ion-item>
+</ion-content>

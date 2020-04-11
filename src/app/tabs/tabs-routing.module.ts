@@ -8,45 +8,95 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../home/home.module').then(m => m.HomePageModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'product',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../product/product.module').then(m => m.ProductPageModule)
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'list',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../list/list.module').then(m => m.ListPageModule)
+          }
+        ]
+      },
+      {
+        path: 'categury',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../categury/categury.module').then(m => m.CateguryPageModule)
+          }
+        ]
+      },
+      {
+        path: 'roduct-detalis',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../product-detalis/product-detalis.module').then(m => m.ProductDetalisPageModule)
+          }
+        ]
+      },
+      {
+        path: 'product-cart',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../product-cart/product-cart.module').then(m => m.ProductCartPageModule)
+          }
+        ]
+      },
+      {
+        path: 'register',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../register/register.module').then(m => m.RegisterPageModule)
+          }
+        ]
+      },
+      {
+        path: 'login',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../login/login.module').then(m => m.LoginPageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Home</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container mt-5">
+        <div *ngIf="!registerMode" style="text-align: center">
+            <h1>Find Your Match</h1>
+            <p class="lead">Comme on .......</p>
+            <div class="text-center">
+                <ion-button color="warning" (click)="registerToggle()">Register</ion-button>
+                <ion-button color="tertiary">Learn More</ion-button>
+            </div>
+        </div>
+
+        <div *ngIf="registerMode" class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <app-register (cancelRegister)="cancelRegisterMod($event)"></app-register>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ion-content>

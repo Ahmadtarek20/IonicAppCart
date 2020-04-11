@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Product</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="Product">
+        <ion-list *ngFor="let pro of Product ;  index as i">
+            <app-product-cart [product]="pro"></app-product-cart>
+            <ion-item>
+                <ion-button color="warning" *ngIf="add !== i" [routerLink]="['/product-detalis/', pro.id]">Details</ion-button>
+                <ion-button color="secondary" (click)="addtoCare(i,pro.id)" *ngIf="add !== i">At to Cart</ion-button>
+            </ion-item>
+            <ion-item *ngIf="add === i">
+                <ion-input type="number" class="form-control" placeholder="Amount" #amount></ion-input>
+                <ion-button color="secondary" (click)="buy(amount.value )">Buy</ion-button>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-list>
+</ion-content>
